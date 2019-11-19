@@ -1,13 +1,13 @@
 use_module(library(lists)).
 
 readData(L) :-
-    see('G:\\master\\krr\\week 3\\data.txt'),
+    see('C:\\master\\krr\\week 3\\data.txt'),
     read(L),
     read(end_of_file),
     seen.
 
 writeOutput(X) :-
-    tell('G:\\master\\krr\\week 3\\output.txt'),
+    tell('C:\\master\\krr\\week 3\\resolution_output.txt'),
     (X = 0 ->
         write('SATISFIABLE')
     ; write('UNSATISFIABLE')),
@@ -33,15 +33,13 @@ resolution:-
     sortByLength(L2,L),
     do_resolve(L).
 
-calc(L):-do_resolve(L).
-
 do_resolve(List):-
     (once(calculate_resolvent(List,Resolvent)) ->
-        (Resolvent = [] -> 
+    (Resolvent = [] -> 
         writeOutput(Resolvent);
         sortByLength([Resolvent|List],L),
         do_resolve(L));
-        writeOutput(0)
+    writeOutput(0)
     ).
 
 calculate_resolvent(List, Resolvent):-
@@ -65,12 +63,6 @@ clause_match(C1, C2, Result):-
         sort(Resolvent,Result)
      ; false
     ).
-
-check_resolvent([],_).
-check_resolvent((H|T), L):-
-    assign_value(H,H2),
-    (member(H2,L) -> !,fail;
-    check_resolvent(T,L).
 
 assign_value(n(X), X):-!.
 assign_value(X,n(X)).

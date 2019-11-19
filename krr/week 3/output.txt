@@ -1,1 +1,5 @@
-UNSATISFIABLE
+YES
+p,true
+a,true
+b,true
+c,true
