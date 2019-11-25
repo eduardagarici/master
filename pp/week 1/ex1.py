@@ -1,4 +1,5 @@
 import pymc as pm
+from scipy.integrate import quad
 
 study_hours = pm.Uniform("study_hours", lower = 0, upper = 20)
 c = 5
@@ -26,3 +27,8 @@ bayes_decision_samples = mcmc.trace("bayes_decision")[:]
 y_samples = mcmc.trace("y")[:]
 
 print("probability to pass:", (y_samples != bayes_decision_samples).mean())
+
+def integrand(x, c):
+    return min(c,x) / (c+x);
+
+print("probability to pass:", 1/(4*c) * quad(integrand, 0, 4*c, args=(c))[0])
