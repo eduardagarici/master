@@ -1,0 +1,2 @@
+[ [[c,i],[p]], [[t],[f]], [[m,f],[flu]], [[s,f], [i]]].
+'patient has pneumonia'.
