@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c44ccf5-2a54-4478-ab7d-398fc49cd6f6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../krr/week 5/project2-part1.pl" beforeDir="false" afterPath="$PROJECT_DIR$/../../krr/week 5/project2-part1.pl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../krr/week 5/project2-part2.pl" beforeDir="false" afterPath="$PROJECT_DIR$/../../krr/week 5/project2-part2.pl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pml/project 2/.ipynb_checkpoints/Project 2 - PML-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../pml/project 2/.ipynb_checkpoints/Project 2 - PML-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pml/project 2/Project 2 - PML.ipynb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex1.py" beforeDir="false" afterPath="$PROJECT_DIR$/ex1.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +21,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../week 2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../week 3" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -74,7 +76,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
