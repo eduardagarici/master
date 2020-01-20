@@ -28,22 +28,25 @@ displayMenu(WM):-
     read(Muscle),
     write('Has patient cough?'),nl,
     read(Cough),
-    buildWM(WM,Temp,Sick,Muscle,Cough).
+    tell('C:\\master\\krr\\week 5\\output.txt'),
+    write([]),nl,
+    buildWM(WM,Temp,Sick,Muscle,Cough),
+    write(WM),nl.
 
 buildWM(WM,Temp, Sick,Muscle,Cough):-
-    (Temp > 38 -> append([], [t], KB1) ; append([],[n(t)],KB1)),
-    (Sick >= 2 -> append(KB1, [s], KB2) ; append(KB1, [n(s)], KB2)),
-    (Muscle = 'yes' -> append(KB2, [m], KB3) ; append(KB2, [n(m)], KB3)),
-    (Cough = 'yes' -> append(KB3, [c], WM) ; append(KB3, [n(c)], WM)),!.
+    (Temp > 38 -> append([], [t], KB1); KB1 = []),
+    (Sick >= 2 -> append(KB1, [s], KB2); KB1 = KB2),
+    (Muscle = 'yes' -> append(KB2, [m], KB3); KB3 = KB2),
+    (Cough = 'yes' -> append(KB3, [c], WM); WM = KB3),!.
 
 do_forwardchain(KB,WM,Goal):-
     (forwardchain(KB,WM,Goal)->
         write('YES'),nl;
-     write('NO'),nl
+     write(WM),nl,told,write('NO'),nl
     ).
 
 
-forwardchain(_,WM,Goal):- all_from_first_in_second(Goal,WM),!.
+forwardchain(_,WM,Goal):- all_from_first_in_second(Goal,WM),!,write(WM),told.
 forwardchain(KB,WM,Goal):-
     member([Cond|Effects],KB),
     all_from_first_in_second(Cond, WM),

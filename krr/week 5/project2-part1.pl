@@ -28,9 +28,9 @@ displayMenu(KB, KBExtended):-
     extendKB(KB,KBExtended,Temp,Sick,Cough).
 
 extendKB(KB,KBExtended, Temp, Sick, Cough):-
-    (Temp > 38 -> append(KB, [[t]], KB1) ; append(KB,[[n(t)]],KB1)),
-    (Sick >= 2 -> append(KB1, [[s]], KB2) ; append(KB1, [[n(s)]], KB2)),
-    (Cough = 'yes' -> append(KB2, [[c]], KBExtended) ; append(KB2, [[n(c)]], KBExtended)),!.
+    (Temp > 38 -> append(KB, [[t]], KB1) ; KB1 = KB),
+    (Sick >= 2 -> append(KB1, [[s]], KB2) ; KB2 = KB1),
+    (Cough = 'yes' -> append(KB2, [[c]], KBExtended) ; KBExtended = KB2),!.
 
 do_backchain(KB,Goals):-
     (backchain(KB,Goals)-> 
